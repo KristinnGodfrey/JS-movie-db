@@ -1,0 +1,22 @@
+{
+  "name": "js-movie-db",
+  "version": "1.0.0",
+  "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KristinnGodfrey/JS-movie-db.git"
+  },
+  "author": "Kristinn Godfrey Gudnason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KristinnGodfrey/JS-movie-db/issues"
+  },
+  "homepage": "https://github.com/KristinnGodfrey/JS-movie-db#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
