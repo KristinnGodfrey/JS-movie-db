@@ -1,25 +1,29 @@
+// imports
 const express = require('express');
-const app = express;
-const path = require('path');
-app.use(express.static(path.join(__dirname, 'public')));
-const router = express.Router();
+const app = express();
+const port = 3000
 
-router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
-  
-  //__dirname : It will resolve to your project folder.
+// static files
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/css'))
+
+// set views
+app.set('views', './views')
+app.set('view engine', 'ejs')
+
+
+app.get('', (req,res) => {
+    res.render('index')
 });
 
-// router.get('/about',function(req,res){
-//   res.sendFile(path.join(__dirname+'/about.html'));
-// });
+app.get('/tmp', (req, res) => {
+    res.render('tmp')
+});
 
-// router.get('/sitemap',function(req,res){
-//   res.sendFile(path.join(__dirname+'/sitemap.html'));
-// });
+// app.get('/videos/:videoId', (req,res) => {    
+//     var data = {titles: []}
+//     res.render('videos', {title: req.params.titles, titles: titles});
+// })
 
-//add the router
-app.use('/', router);
-app.listen(process.env.port || 3000);
-
-console.log('Running at Port 3000');
+// listen on port 3000
+app.listen(port, () => console.info(`listening on port on localhost:${port}`));
