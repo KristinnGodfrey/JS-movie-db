@@ -13,15 +13,16 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 app.get('', (req,res) => {
+    
     // const filter = [];
-    // categories.forEach(function(video) {
-    //     filter.append(videos.id)
-    // })
-    // console.log(videos)
-
-    // let sliced = videos.slice(0,3);
-
-    res.render('index', videos)
+    // videos.categories.forEach(function(category) {
+    //     category.videos.forEach(function(vids) {
+    //         console.log(vids);
+    //     })
+    // });
+    // console.log(filter);
+    // res.render('index', videos, filter);
+    res.render('index', videos);
 });
 
 app.get('/videos/:videoId', (req,res) => {    
@@ -41,3 +42,4 @@ app.listen(port, () => console.info(`listening on port on localhost:${port}`));
 // app.get('/videos', (req, res) => {
 //     res.render('videos')
 // });
+
