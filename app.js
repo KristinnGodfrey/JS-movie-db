@@ -13,16 +13,27 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 app.get('', (req,res) => {
+    const filter = [];
     
-    // const filter = [];
-    // videos.categories.forEach(function(category) {
-    //     category.videos.forEach(function(vids) {
-    //         console.log(vids);
-    //     })
-    // });
-    // console.log(filter);
-    // res.render('index', videos, filter);
-    res.render('index', videos);
+    // console.log(videos.categories[0].videos[0]);
+    // console.log(videos.videos[0].id);
+
+    for(let c = 0; c < 3; c++){
+        filter.push(videos.categories[c].title);
+        for(let i = 0; i < videos.categories[c].videos.length; i++) {
+            for(let j = 0; j < videos.videos.length; j++) {
+                if (videos.categories[c].videos[i] == videos.videos[j].id) {
+                    filter.push(videos.videos[j].title);
+                }
+            }
+        }        
+        if(c<2) {
+            filter.push('-');
+        }
+    }
+    
+    console.log(filter);      
+    res.render('index', {videos: filter, videos});
 });
 
 app.get('/videos/:videoId', (req,res) => {    
