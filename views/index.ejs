@@ -7,18 +7,29 @@
     <link href="css/styles.css" rel="stylesheet">    
     <title>Listi</title>
 </head>
-
 <body>
+
     <div class="container">      
-        <div class="inner-container">            
-            <div class="parent"> 
-                <script id="template" type="text/html">
-                    <% for (var i=0; i < categories.videos.length; i++){ %>                
-                <div class="child">
-                    <h1 class="center-text">fræðslumyndbandaleigan </h1> </div>
-                </div>
-                </script>            
-        </div>
-    </div>
-</body>
-</html>
+        <div class="inner-container">
+            <div> 
+                <h1 class="center-text">fræðslumyndbandaleigan </h1> 
+            </div>
+            <% for (let i = 0; i < categories.length; i++){ %>
+                <div class="parent">
+                <% for (let j = 0; j < categories[i].videos.length; j++) {  %>
+                    <div class="child">                        
+                        <% const videoIndex = categories[i].videos[j] - 1; %>
+                        <a href="videos/<%= videos[videoIndex].id %>">
+                            <img src="<%= videos[videoIndex].poster %>">
+                        </a>
+                        <h3> <%= videos[videoIndex].title %> </h3>
+                        <p> <%= videos[videoIndex].created %> </p>
+                    </div>
+                <% } %>
+                </div>     
+                <hr>
+            <% } %>
+
+    </body>
+</html>     
+
