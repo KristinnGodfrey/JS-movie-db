@@ -12,7 +12,28 @@
     <div class="container">      
         <div class="inner-container">
             <div> 
-            <h1 class="center-text">fræðslumyndbandaleigan </h1> </div>
-            <h2><%=  </h2>
-</body>
-</html>
+                <h1 class="center-text">fræðslumyndbandaleigan </h1> 
+            </div>
+
+            <% for (let i = 0; i < categories.length; i++){ %>
+                <div class="parent">
+                <% for (let j = 0; j < categories[i].videos.length; j++) {  %>
+                    <div class="child">
+                        
+                        <% const videoIndex = categories[i].videos[j] - 1; %>
+                        <a href="videos/<%= videos[videoIndex].id %>">
+                            <img src="<%= videos[videoIndex].poster %>">
+                        </a>
+                        <h3> <%= videos[videoIndex].title %> </h3>
+                        <p> <%= videos[videoIndex].created %> </p>
+                    </div>
+
+                <% } %>
+                </div>     
+                <hr>           
+                
+            <% } %>
+           
+            
+    </body>
+</html>     
