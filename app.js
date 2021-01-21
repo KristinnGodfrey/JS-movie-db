@@ -39,10 +39,8 @@ app.get('', (req,res) => {
 });
 
 app.get('/videos/:videoId', (req,res) => {    
-    const videoId = req.params.videoId;
-    const video = videos.videos.find(video => video.id == videoId);
-
-    res.render('videos', {video});
+    const video = videos.videos.find(video => video.id == req.params.videoId);
+    res.render('videos', {video, videos});
 })
 
 // listen on port 3000

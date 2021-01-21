@@ -23,6 +23,6 @@ yarn-error.log*
 .env
 
 # sleppum styles.css þar sem það verður búið til út frá styles.scss
-styles.css
+# styles.css
 
 DS_Store

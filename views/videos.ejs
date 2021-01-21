@@ -12,9 +12,9 @@
     <div class="container">      
         <div class="inner-container">
             <div class="parent">
-                <div class="child large">
+                <div class="child-large">
                     <h1 class="center-text"> <%= video.title %> </h1>
-                    <img src="../videos/typing.png">
+                    <img src="../<%= video.poster %>">                    
                     <span class="tmp-block center">
                         <p></p>
                         <img src="../videos/16-9.png">
@@ -22,19 +22,16 @@
                         <img src="../videos/16-9.png">
                         <img src="../videos/16-9.png">
                         <img src="../videos/16-9.png">
-                    </span>
-                    
-                    <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed aliquet odio, non commodo nisi. Cras iaculis magna leo, et placerat felis placerat ac. Praesent massa sapien, volutpat ac tellus ultrices, porta lacinia urna. </p>
+                    </span>                    
+                    <p ><%= video.description %></p>
                     <h2>Tengd myndbönd</h2>
                 </div>
-                <div class="child"> 
-                    <img src="../videos/16-9.png">
-                    <h3>Ótrúlegt myndband sem þú verður að sjá til að trúa því sem gerist. Vá</h3>                                            
-                </div>      
-                <div class="child"> 
-                    <img src="../videos/drone.png"> 
-                    <h3>Fallegt náttúrumyndband</h3>                    
-                </div>           
+                <% for (let i = 0; i < videos.videos[video.id - 1].related.length; i++) { %> 
+                <div class="child">                                 
+                    <img src="../<%= videos.videos[videos.videos[video.id-1].related[i] - 1].poster %>">  
+                    <h1>hallo</h1>   
+                </div> 
+                <% } %>      
             </div>
         </div>
     </div>    
