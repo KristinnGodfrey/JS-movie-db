@@ -6,7 +6,7 @@ const videoAgeMap = (unit) => {
     const now = new Date();
     const created = new Date(unit);
     const fake = new Date(2021,0,25);
-    const fake2 = new Date(2021,10,28);
+    const fake2 = new Date(2021,10,19);
     // console.log(created)
     
 
@@ -15,7 +15,6 @@ const videoAgeMap = (unit) => {
     
     // month = (month >= 12) ? month = 0 : month = month;
     // console.log("now:" , now.getMonth()+1);
-    // console.log(fake.getMonth()+1);
     // console.log(month);
 
     // 26 - 30 = -4
@@ -30,13 +29,23 @@ const videoAgeMap = (unit) => {
     else {
         day = (now.getDate() - created.getDate()); 
     }
+    let hrs = null;
+    if (now.getHours > created.getHours){
+        hrs = now.getHours - created.getHours;    
+    }
+    else {
+        hrs = (now.getHours + 24) - created.getHours;
+    }
 
-    // console.log(day);
-    // if (year == 1) return `Fyrir {year} ári síðan`;
-    if (year > 1) return `Fyrir ${year} árum síðan`;
-    // if (month == 1) return `Fyrir {month} mánuði síðan`;
-    if (month > 1) return `Fyrir ${month} mánuðum síðan`;
-    if (day > 1) return `Fyrir ${day} dögum síðan`;
+    
+    
+    if (year > 1) return `Fyrir ${year} árum síðan`;    
+    else if (month > 1) return `Fyrir ${month} mánuðum síðan`;
+    else if (day > 7) return `Fyrir ${Math.floor(day / 7)} vikum síðan`;
+    else if (day == 7) return `Fyrir ${day / 7} viku síðan`;
+    else if (day > 1) return `Fyrir ${day} dögum síðan`;
+    else if (hrs == 1) return `Fyrir ${hrs} klukkutímum síðan`;
+    else if (hrs > 1) return `Fyrir ${hrs} klukkutímum síðan`;
 
     return unit;
 };
