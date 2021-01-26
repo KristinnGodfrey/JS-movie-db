@@ -29,7 +29,7 @@ const videoAgeMap = (unit) => {
     if (year > 1) return `Fyrir ${year} árum síðan`;    
     else if (month > 1) return `Fyrir ${month} mánuðum síðan`;
     else if (day > 7) return `Fyrir ${Math.floor(day / 7)} vikum síðan`;
-    else if (day == 7) return `Fyrir ${day / 7} viku síðan`;
+    else if (day == 7) return `Fyrir ${Math.floor(day / 7)} viku síðan`;
     else if (day > 1) return `Fyrir ${day} dögum síðan`;
     else if (hrs == 1) return `Fyrir ${hrs} klukkutímum síðan`;
     else if (hrs > 1) return `Fyrir ${hrs} klukkutímum síðan`;
