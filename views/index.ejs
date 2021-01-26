@@ -21,7 +21,7 @@
                             <img src="<%= videos[videoIndex].poster %>">
                         </a>
                         <h3> <%= videos[videoIndex].title %> </h3>
-                        <p> <%= videos[videoIndex].created %> </p>
+                        <p> <%= videoAgeMap(videos[videoIndex].created) %> </p>
                     </div>
                 <% } %>
                 </div>     
