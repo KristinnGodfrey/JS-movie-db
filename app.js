@@ -25,12 +25,3 @@ app.get('/videos/:videoId', (req,res) => {
 
 // listen on port 3000
 app.listen(port, () => console.info(`listening on port on localhost:${port}`));
-
-// app.get('/tmp', (req, res) => {
-//     res.render('tmp')
-// });
-
-// app.get('/videos', (req, res) => {
-//     res.render('videos')
-// });
-

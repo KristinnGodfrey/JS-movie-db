@@ -21,7 +21,7 @@
                 <% for (let i = 0; i < videos.videos[video.id - 1].related.length; i++) { %> 
                 <div class="child">                                 
                     <img src="../<%= videos.videos[videos.videos[video.id-1].related[i] - 1].poster %>">  
-                    <h1>hallo</h1>   
+                    <h3><%= videos.videos[videos.videos[video.id-1].related[i] - 1].title %>"</h1>   
                 </div> 
                 <% } %>      
             </div>
