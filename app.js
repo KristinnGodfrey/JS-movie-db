@@ -12,6 +12,12 @@ app.use('/css', express.static(__dirname + 'public/css'))
 app.set('views', './views')
 app.set('view engine', 'ejs')
 
+// app.use('', (req,res,next) => {
+//     if (res.statusCode == 404) {
+//         res.render('404', )
+//     }
+// })
+
 app.get('', (req,res) => {
     res.render('index', videos);
 });
