@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">    
-    <title>Listi</title>
-</head>
-<body>
-
-    <div class="container">      
-        <div class="inner-container">            
-            <h1 class="center-text">fræðslumyndbandaleigan </h1>             
-            <% for (let i = 0; i < categories.length; i++){ %>
-                <div class="parent">
-                <% for (let j = 0; j < categories[i].videos.length; j++) {  %>
-                    <div class="child">                        
-                        <% const videoIndex = categories[i].videos[j] - 1; %>
-                        <a href="videos/<%= videos[videoIndex].id %>">
-                            <img src="<%= videos[videoIndex].poster %>">
-                        </a>
-                        <h3> <%= videos[videoIndex].title %> </h3>
-                        <p> <%= videoAgeMap(videos[videoIndex].created) %> </p>
-                    </div>
-                <% } %>
-                </div>     
-                <hr>
-            <% } %>
-
-    </body>
-</html>     
-
+<%- include('header') -%>
+    <% for (let i = 0; i < categories.length; i++){ %>
+        <div class="parent">
+        <% for (let j = 0; j < categories[i].videos.length; j++) {  %>
+            <div class="child">                        
+                <% const videoIndex = categories[i].videos[j] - 1; %>
+                <a href="<%= videos[videoIndex].id %>">
+                    <img src="<%= videos[videoIndex].poster %>">
+                </a>
+                <h3> <%= videos[videoIndex].title %> </h3>
+                <p> <%= videoAgeMap(videos[videoIndex].created) %> </p>
+            </div>
+        <% } %>
+        </div>     
+        <hr>
+    <% } %>
+    
+<%- include('footer') -%>

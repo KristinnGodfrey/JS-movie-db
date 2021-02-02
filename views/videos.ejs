@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/reset.css" rel="stylesheet">
-    <link href="../css/styles.css" rel="stylesheet">    
-    <title>Listi</title>
-</head>
-
-<body>
-    <div class="container">      
-        <div class="inner-container">
-            <div class="parent">
-                <div class="child-large">
-                    <h1 class="center-text"> <%= video.title %> </h1>
-                    <video src="../<%= video.video %>" controls></video>                               
-                    <p ><%= video.description %></p>
-                    <h2>Tengd myndbönd</h2>
-                </div>
-                <% for (let i = 0; i < videos.videos[video.id - 1].related.length; i++) { %> 
-                <div class="child">                                 
-                    <img src="../<%= videos.videos[videos.videos[video.id-1].related[i] - 1].poster %>">  
-                    <h3><%= videos.videos[videos.videos[video.id-1].related[i] - 1].title %>"</h1>   
-                </div> 
-                <% } %>      
-            </div>
+<%- include('header') -%>
+    <div class="parent">
+        <div class="child-large">                    
+            <video src="<%= video.video %>" controls></video>                               
+            <p ><%= video.description %></p>
+            <h2>Tengd myndbönd</h2>
         </div>
-    </div>    
-</body>
-</html>
+        <% for (let i = 0; i < videos.videos[video.id - 1].related.length; i++) { %> 
+        <div class="child">  
+            
+            <a href="<%= videos.videos[videos.videos[video.id-1].related[i] - 1].id %>">
+                <img src="<%= videos.videos[videos.videos[video.id-1].related[i] - 1].poster %>">  
+            </a>
+            <h3><%= videos.videos[videos.videos[video.id-1].related[i] - 1].title %>"</h1>   
+        </div> 
+        <% } %>      
+        
+    </div>
+    <hr>
+    
+<%- include('footer') -%>
