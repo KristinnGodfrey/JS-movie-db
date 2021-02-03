@@ -6,8 +6,7 @@
             <h2>Tengd myndbönd</h2>
         </div>
         <% for (let i = 0; i < videos.videos[video.id - 1].related.length; i++) { %> 
-        <div class="child">  
-            
+        <div class="child">              
             <a href="<%= videos.videos[videos.videos[video.id-1].related[i] - 1].id %>">
                 <img src="<%= videos.videos[videos.videos[video.id-1].related[i] - 1].poster %>">  
             </a>
