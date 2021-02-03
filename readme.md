@@ -4,5 +4,7 @@
 
 * `npm install` 
 * `npm start` 
+
+## Debug
 * `npm test`
 
