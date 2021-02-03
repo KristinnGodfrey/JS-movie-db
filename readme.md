@@ -5,6 +5,6 @@
 * `npm install` 
 * `npm start` 
 
-## Debug
+## Test linting
 * `npm test`
 
