@@ -4,8 +4,7 @@
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "npx stylelint \"**/styles.css\"",
-    "start": "concurrently \"npx stylelint **/styles.css\" \"npx eslint app.js src/video-age.js\" "
+    "test": "concurrently \"npx stylelint **/styles.css\" \"npx eslint app.js src/video-age.js\" "
   },
   "repository": {
     "type": "git",
