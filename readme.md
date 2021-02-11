@@ -1,4 +1,4 @@
-# Vef2 2021, verkefni 1
+# JS-movie-db
 
 ## Set up
 
